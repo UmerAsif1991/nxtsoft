@@ -1,0 +1,63 @@
+﻿@model IEnumerable<testNextsol.classes.dep>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout/_LayoutPage.cshtml";
+}
+
+<h2>Departments</h2>
+
+<p>
+    @Html.ActionLink("Users", "Index", "Users")
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDepartment")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            <b>Id</b>
+        </th>
+        <th>
+           <b>Name</b>
+        </th>
+        <th>
+            <b>Description</b>
+        </th>
+        <th>
+            <b>Address</b>
+        </th>
+        <th>
+           <b>Users</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desciption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            <a href="@item.id">@item.count</a>
+            @*@Html.DisplayFor(modelItem => item.count)*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateDepartment", new { id=item.id }) |
+            @Html.ActionLink("Delete ", "DeleteDepartment", new { id = item.id }, new { @class = "fa fa-remove", @style = "color:#2a3f54", onclick = "return confirm('Are you sure you wish to delete this record?');" }) &nbsp;&nbsp;&nbsp;
+        </td>
+    </tr>
+}
+
+</table>
