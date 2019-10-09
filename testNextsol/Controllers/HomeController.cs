@@ -14,29 +14,7 @@ namespace testNextsol.Controllers
         nxtSolEntities edm = new nxtSolEntities();   
         public ActionResult Index()
         {
-            //var ss = from c in edm.Users
-            //         group c by c.depId into g
-            //         select (p => new
-            //         {
-            //             id = g.Where(a => a.depId == g.Key).Select(a => a.Department.departmentId).FirstOrDefault(),
-            //             Name = g.Where(a => a.depId == g.Key).Select(a => a.Department.name).FirstOrDefault(),
-            //             desciption = g.Where(a => a.depId == g.Key).Select(a => a.Department.description).FirstOrDefault(),
-            //             address = g.Where(a => a.depId == g.Key).Select(a => a.Department.description).FirstOrDefault(),
-            //             active = g.Where(a => a.depId == g.Key).Select(a => a.Department.active).FirstOrDefault(),
-            //             Sum = g.Sum(oi => oi.depId)
-            //         });
-
-            //var result = (from c in edm.Users
-            //              group c by new { c.depId } into grp
-            //              join d in edm.Departments on grp.Key.depId equals d.departmentId
-            //              select new dep {
-            //                  id = grp.Key.depId,
-            //                  Name = d.name,
-            //                  desciption = d.description,
-            //                  address = d.Adress,
-            //                  count = grp.Count() == 0 ? 0: grp.Count()
-            //              })
-            //              .ToList();
+            
 
             var result = (from c in edm.Departments                          
                           join d in edm.Users
