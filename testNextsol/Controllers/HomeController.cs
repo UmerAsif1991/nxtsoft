@@ -11,7 +11,7 @@ namespace testNextsol.Controllers
 {
     public class HomeController : Controller
     {
-        nxtSolEntities edm = new nxtSolEntities();
+        nxtSolEntities edm = new nxtSolEntities();   
         public ActionResult Index()
         {
             //var ss = from c in edm.Users
