@@ -98,7 +98,7 @@ namespace testNextsol.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateDepartment(Department dep)
+        public ActionResult UpdateDepartment(Department dep)  
         {
             if (ModelState.IsValid)
             {
